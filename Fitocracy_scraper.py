@@ -24,10 +24,10 @@ time.sleep(5)
 
 username = driver.find_element_by_xpath('//*[@id="login-modal-form"]/div[2]/div[1]/input')
 time.sleep(2)
-username.send_keys("jeffalstott")
+username.send_keys("XXXXXXXXXX")
 password = driver.find_element_by_xpath('//*[@id="login-modal-form"]/div[2]/div[2]/input')
 time.sleep(2)
-password.send_keys('2cI!Kf2m!#tY')
+password.send_keys('XXXXXXXXXX')
 driver.find_element_by_xpath('//*[@id="login-modal-form"]/button').click()
 
 print "logged in"
@@ -51,6 +51,12 @@ print total
 from beeminderpy import Beeminder
 
 my_beeminder = Beeminder('your_auth_token')
-my_beeminder.create_datapoint(username = 'yourusername',goalname = 'yourgoalname',timestamp = int(time.time()),value = total, comment = 'Scraped from Fitocracy on' + time.ctime())
+
+my_beeminder.create_datapoint(
+	username = 'yourusername',
+	goalname = 'yourgoalname',
+	timestamp = int(time.time()),
+	value = total, 
+	comment = 'Scraped from Fitocracy on' + time.ctime())
 
 
