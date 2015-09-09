@@ -22,8 +22,8 @@ Download the latest version of the [chromedriver](http://chromedriver.storage.go
 ##Dependencies
 
 1. You will need to install the following Python modules: 
-- [time](https://docs.python.org/2/library/time.html) 
-- [selenium](https://pypi.python.org/pypi/selenium)
+	- [time](https://docs.python.org/2/library/time.html) 
+	- [selenium](https://pypi.python.org/pypi/selenium)
 both are installed using `pip`.
 
 2. Clone the [beeminderpy.py](https://github.com/mattjoyce/beeminderpy/blob/master/beeminderpy.py) file and put it in the same directory as FitBee.py. 
