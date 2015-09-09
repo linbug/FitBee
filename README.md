@@ -11,22 +11,26 @@ The comment “Scraped from Fitocracy on” plus the current timestamp will be s
 
 I’m working on making the browser window headless.
 
-
-##Configuration
-
-Fill in your Fitocracy and Beeminder usernames and passwords in FitBee.py. 
-Get your Beeminder auth token by signing into Beeminder, and then visiting https://www.beeminder.com/api/v1/auth_token.json. 
-
-Download the latest version of the [chromedriver](http://chromedriver.storage.googleapis.com/index.html), unzip it, and set `path_to_chromedriver` as the path to this file.
-
 ##Dependencies
 
 1. You will need to install the following Python modules: 
 	- [time](https://docs.python.org/2/library/time.html) 
 	- [selenium](https://pypi.python.org/pypi/selenium)
+
 both are installed using `pip`.
 
-2. Clone the [beeminderpy.py](https://github.com/mattjoyce/beeminderpy/blob/master/beeminderpy.py) file and put it in the same directory as FitBee.py. 
+2. Clone the [beeminderpy.py](https://github.com/mattjoyce/beeminderpy/blob/master/beeminderpy.py) file and put it in the same directory as FitBee.py.
+
+3. Download the latest version of the [chromedriver](http://chromedriver.storage.googleapis.com/index.html), unzip it, and note the path to this file
+
+##Configuration
+
+- Fill in your Fitocracy and Beeminder usernames and passwords in FitBee.py. 
+Get your Beeminder auth token by signing into Beeminder, and then visiting https://www.beeminder.com/api/v1/auth_token.json. 
+
+- set `path_to_chromedriver` as the path to where you downloaded chromedriver
+
+ 
 
 
 
