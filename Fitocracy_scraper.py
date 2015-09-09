@@ -27,3 +27,12 @@ username.send_keys("xxxxxxxx")
 password = driver.find_element_by_xpath('//*[@id="login-modal-form"]/div[2]/div[2]/input')
 password.send_keys('xxxxxxxx')
 driver.find_element_by_xpath('//*[@id="login-modal-form"]/button').click()
+
+todays_points = driver.find_elements_by_xpath("//div/a[contains(text(),'Today')]/preceding-sibling::span")
+
+total = 0
+for today in todays_points:   
+    points = today.find_elements_by_class_name("stream_total_points")[0].text
+    points = int(points[:-4])
+    total += points
+total
