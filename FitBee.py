@@ -11,7 +11,7 @@ path_to_chromedriver 		= '/path/to/chromedriver'
 import time
 from selenium import webdriver
 from beeminderpy import Beeminder
-from pyvirtualdisplay import Display
+#from pyvirtualdisplay import Display
 #driver = webdriver.PhantomJS()
 
 ###################### Open up Fitocracy in your browser
