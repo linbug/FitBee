@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 ##################### Fill out your details
 Fitocracy_username 			= 'Your_Fitocracy_username'
 Fitocracy_password 			= 'Your_Fitocracy_password'
@@ -27,7 +28,7 @@ time.sleep(5)
 ###################### Define functions
 
 def login_to_Fitocracy():
-	print "Logging into Fitocracy..."
+	print("Logging into Fitocracy...")
 	login_xpath = '/html/body/div[2]/div/div/div[2]/a'
 	driver.find_element_by_xpath(login_xpath).click()
 	time.sleep(5)
@@ -38,10 +39,10 @@ def login_to_Fitocracy():
 	time.sleep(5)
 	password.send_keys(Fitocracy_password)
 	driver.find_element_by_xpath('//*[@id="login-modal-form"]/button').click()
-	print "Logged in"
+	print("Logged in")
 
 def scrape_todays_points():
-	print "Scraping points"
+	print("Scraping points")
 	time.sleep(10)
 	todays_points = driver.find_elements_by_xpath("//div/a[contains(text(),'Today')]/preceding-sibling::span")
 	total = 0
@@ -51,13 +52,13 @@ def scrape_todays_points():
 	    total += points
 	driver.close()
 	if todays_points == []:
-		print "No points from today (maybe something went wrong?) :C"
+		print("No points from today (maybe something went wrong?) :C")
 	else:
-		print "Today you earned " + str(total) + " points!"
+		print("Today you earned " + str(total) + " points!")
 	return total
 
 def send_points_to_Beeminder(total):
-	print "Sending points to Beeminder"
+	print("Sending points to Beeminder")
 	my_beeminder = Beeminder(Beeminder_authtoken)
 	my_beeminder.create_datapoint(
 		username = Beeminder_username,
@@ -73,4 +74,3 @@ driver.set_window_size(1024,768)
 total_points = scrape_todays_points()
 send_points_to_Beeminder(total_points)
 display.stop()
-
