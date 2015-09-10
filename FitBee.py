@@ -48,7 +48,7 @@ def scrape_todays_points():
 	total = 0
 	for today in todays_points:   
 	    points = today.find_elements_by_class_name("stream_total_points")[0].text
-	    points = int(points[:-4])
+	    points = int(points[:-4].replace(',', '')
 	    total += points
 	driver.close()
 	if todays_points == []:
@@ -58,6 +58,7 @@ def scrape_todays_points():
 	return total
 
 def send_points_to_Beeminder(total):
+
 	print("Sending points to Beeminder")
 	my_beeminder = Beeminder(Beeminder_authtoken)
 	my_beeminder.create_datapoint(

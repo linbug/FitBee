@@ -14,7 +14,6 @@ I’m working on making the browser window headless.
 ##Dependencies
 
 1. You will need to install the following Python modules: 
-	- [time](https://docs.python.org/2/library/time.html) 
 	- [selenium](https://pypi.python.org/pypi/selenium)
 
 	both are installed using `pip`.
