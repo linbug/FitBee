@@ -5,11 +5,13 @@ Scrape your day's points from Fitocracy and add them to your Beeminder goal
 ##Usage
 Running this script will pull all of today’s points from Fitocracy and log them to whichever Beeminder goal you like. 
 
+Should work with both Python 2 and Python 3.
+
 **Note: Your points will be logged each time you run this script, so only run it once at the end of the day!**
 
 The comment “Scraped from Fitocracy on” plus the current timestamp will be sent to Beeminder. Emails are by default set to false.
 
-I’m working on making the browser window headless. At the moment this only works with Python 2.
+I’m working on making the browser window headless. 
 
 ##Dependencies
 
