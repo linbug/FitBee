@@ -18,7 +18,7 @@ I’m working on making the browser window headless. At the moment this only wor
 	
 	using `pip`.
 
-2. Clone the [beeminderpy.py](https://github.com/mattjoyce/beeminderpy/blob/master/beeminderpy.py) file and put it in the same directory as FitBee.py.
+2. Clone the [beeminderpy.py](https://github.com/jeffalstott/beeminderpy/blob/545c742db394d23d496aa1d1bef65959ec47a1cb/beeminderpy.py) file and put it in the same directory as FitBee.py. 
 
 3. Download the latest version of the [chromedriver](http://chromedriver.storage.googleapis.com/index.html), unzip it, and note the path to this file
 
