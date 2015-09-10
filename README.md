@@ -9,14 +9,14 @@ Running this script will pull all of today’s points from Fitocracy and log the
 
 The comment “Scraped from Fitocracy on” plus the current timestamp will be sent to Beeminder. Emails are by default set to false.
 
-I’m working on making the browser window headless.
+I’m working on making the browser window headless. At the moment this only works with Python 2.
 
 ##Dependencies
 
-1. You will need to install the following Python modules: 
+1. You will need to install the following Python module: 
 	- [selenium](https://pypi.python.org/pypi/selenium)
-
-	both are installed using `pip`.
+	
+	using `pip`.
 
 2. Clone the [beeminderpy.py](https://github.com/mattjoyce/beeminderpy/blob/master/beeminderpy.py) file and put it in the same directory as FitBee.py.
 
