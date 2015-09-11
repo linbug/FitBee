@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 ##################### Fill out your details
-Fitocracy_username 			= 'Your_Fitocracy_username'
-Fitocracy_password 			= 'Your_Fitocracy_password'
-Beeminder_Auth_Token		= 'Your_Beeminder_Auth_Token' 
-Beeminder_username			= 'Your_Beeminder_Username'
-Beeminder_goalname			= 'Your_goal_name'
-path_to_chromedriver 		= '/path/to/chromedriver'
+Fitocracy_username 	= 'linbug'
+Fitocracy_password 	= 'QmrXK8A9ALP'
+Beeminder_authtoken = '45kTWEpaE622FYivqpGE' 
+Beeminder_username	= 'jeffalstott'
+Beeminder_goalname	= 'workout'
+path_to_chromedriver 		='/Users/Lin/Downloads/chromedriver'
 
 ##################### Import dependencies
 
@@ -31,15 +31,22 @@ def login_to_Fitocracy():
 	print("Logging into Fitocracy...")
 	login_xpath = '/html/body/div[2]/div/div/div[2]/a'
 	driver.find_element_by_xpath(login_xpath).click()
-	time.sleep(5)
+	time.sleep(2)
 	username = driver.find_element_by_xpath('//*[@id="login-modal-form"]/div[2]/div[1]/input')
 	time.sleep(2)
 	username.send_keys(Fitocracy_username)
 	password = driver.find_element_by_xpath('//*[@id="login-modal-form"]/div[2]/div[2]/input')
-	time.sleep(5)
+	time.sleep(3)
 	password.send_keys(Fitocracy_password)
+	time.sleep(2)
 	driver.find_element_by_xpath('//*[@id="login-modal-form"]/button').click()
-	print("Logged in")
+
+def check_if_login_worked():
+	time.sleep(5)
+	if driver.current_url == 'https://www.fitocracy.com/home/':
+		return(1)
+	else:
+		return(0)
 
 def scrape_todays_points():
 	print("Scraping points")
@@ -48,7 +55,7 @@ def scrape_todays_points():
 	total = 0
 	for today in todays_points:   
 	    points = today.find_elements_by_class_name("stream_total_points")[0].text
-	    points = int(points[:-4].replace(',', '')
+	    points = int(points[:-4].replace(',', ''))
 	    total += points
 	driver.close()
 	if todays_points == []:
@@ -71,7 +78,13 @@ def send_points_to_Beeminder(total):
 ####################### Execute functions
 driver.set_window_size(1024,768)
 login_to_Fitocracy()
-driver.set_window_size(1024,768)
-total_points = scrape_todays_points()
-send_points_to_Beeminder(total_points)
-display.stop()
+check = check_if_login_worked()
+if check:
+	print("Login successful")
+	driver.set_window_size(1024,768)
+	total_points = scrape_todays_points()
+	send_points_to_Beeminder(total_points)
+else:
+	print("Login failed") 
+
+#display.stop()
