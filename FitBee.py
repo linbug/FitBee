@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 ##################### Fill out your details
-Fitocracy_username 	= 'linbug'
-Fitocracy_password 	= 'QmrXK8A9ALP'
-Beeminder_authtoken = '45kTWEpaE622FYivqpGE' 
-Beeminder_username	= 'jeffalstott'
-Beeminder_goalname	= 'workout'
-path_to_chromedriver 		='/Users/Lin/Downloads/chromedriver'
+Fitocracy_username 			= 'Your_Fitocracy_username'
+Fitocracy_password 			= 'Your_Fitocracy_password'
+Beeminder_Auth_Token		= 'Your_Beeminder_Auth_Token' 
+Beeminder_username			= 'Your_Beeminder_Username'
+Beeminder_goalname			= 'Your_goal_name'
+path_to_chromedriver		= '/path/to/chromedriver'
 
 ##################### Import dependencies
 
