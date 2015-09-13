@@ -8,6 +8,7 @@ Running this script will pull all of today’s points from Fitocracy and log the
 Should work with both Python 2 and Python 3.
 
 **Note: Your points will be logged each time you run this script, so only run it once at the end of the day!**
+**Also note: this will not work if you are following other people, since it takes any points logged today from your news stream. (I can modify this on request)**
 
 The comment “Scraped from Fitocracy on” plus the current timestamp will be sent to Beeminder. Emails are by default set to false.
 
